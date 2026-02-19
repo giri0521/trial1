@@ -1,0 +1,5 @@
+/workspaces/trial1/build/CMakeFiles/main.dir
+/workspaces/trial1/build/CMakeFiles/runTests.dir
+/workspaces/trial1/build/CMakeFiles/test.dir
+/workspaces/trial1/build/CMakeFiles/edit_cache.dir
+/workspaces/trial1/build/CMakeFiles/rebuild_cache.dir

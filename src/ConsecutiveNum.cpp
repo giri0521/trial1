@@ -3,15 +3,24 @@
 #include <algorithm>
 using namespace std;
 int ConsecutiveNum(vector<int> v){
-    // sort the copy since we're taking by value
-    int count = 1;
+    if (v.empty()) return 0;
+    int current= 1;
+    int maxCount = 1;
     sort(v.begin(), v.end());
-    for(int i = 0; i < v.size() - 1; ++i){
-        if(v[i+1] == v[i] + 1){
-            count++;
+    for(int i = 1; i < v.size(); ++i){
+        if(v[i] == v[i -1]){
+            continue;
+        }
+        else if(v[i] == v[i - 1] + 1){
+            current++;
+        }
+        else{
+            maxCount = max(maxCount, current);
+            current = 1;
         }
     }
-    return count;
+    maxCount = max(maxCount, current);
+    return maxCount;
 }
 
 int main(){
@@ -19,6 +28,7 @@ int main(){
     cout << "Enter the number of elements: ";
     cin>> n;
     vector<int> v;
+    v.reserve(n);
     for(int i = 0; i < n; ++i){
         int num;
         cin >> num;
